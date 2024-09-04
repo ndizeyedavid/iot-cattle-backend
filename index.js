@@ -193,7 +193,6 @@ app.get('/settings/view', (req, res)=>{
     db.query(sql, (err, data)=>{
         if (err) return console.log("\nFailed to fetch settings data \nError: " + err.sqlMessage);
         res.json(data[0])
-        console.log('\n Settings revealed')
     })
 })
 
