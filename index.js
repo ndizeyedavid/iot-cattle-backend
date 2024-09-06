@@ -258,7 +258,7 @@ app.get('/tracking/status', (req, res)=>{
 
     let id = req.query.id;
     
-    const sql = "SELECT status FROM tracking WHERE id = ? ORDER BY date DESC";
+    const sql = "SELECT status FROM tracking WHERE id = ?";
     db.query(sql, (err, [id], data)=>{
         if (err) return console.log("\nFailed to located cattle with id " + id + " status \nError: " + err.sqlMessage);
         res.json({ status: 200, cont: data})
